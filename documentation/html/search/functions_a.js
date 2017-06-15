@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['sendcandata',['sendCANdata',['../main_8cpp.html#ab3482f99e276ecf1c131d7bb21bbc7c6',1,'main.cpp']]],
+  ['setcountermax',['setCounterMax',['../class_m32m1__pwm.html#a4461d39c594d7617de924d431ac23451',1,'M32m1_pwm']]],
+  ['setdutycycle0',['setDutyCycle0',['../class_m32m1__pwm.html#a6c42165d1399f1f8837cd8924fbf244a',1,'M32m1_pwm']]],
+  ['setdutycycle1',['setDutyCycle1',['../class_m32m1__pwm.html#acc318dba9ea97e5a5833fdad9681de6f',1,'M32m1_pwm']]],
+  ['setdutycycle2',['setDutyCycle2',['../class_m32m1__pwm.html#aa0eb93195214db30fb81b47976f1c2d8',1,'M32m1_pwm']]],
+  ['setfrequency',['setFrequency',['../class_m32m1__pll.html#a87c8c460e9d47b11d1b348a759ba3e07',1,'M32m1_pll']]],
+  ['sethigh',['setHigh',['../class_output.html#aada8d61fb1e5b5383ab5da22783cd626',1,'Output']]],
+  ['setkd',['setKd',['../class_pid.html#a719916dea001d78e012797cdb27562ce',1,'Pid']]],
+  ['setki',['setKi',['../class_pid.html#acb0d9e10f4083e4673c98398113e5f3d',1,'Pid']]],
+  ['setkp',['setKp',['../class_pid.html#a176fd7cdc55fe064623663fc257b7cb8',1,'Pid']]],
+  ['setlow',['setLow',['../class_output.html#a4849f3563569328dd4e6effd7c9b9a6d',1,'Output']]],
+  ['setoutputconfiguration',['setOutputConfiguration',['../class_m32m1__pwm.html#ae4e1bacd2f0039882d74df2e61420e46',1,'M32m1_pwm']]],
+  ['setprescaler',['setPrescaler',['../class_m32m1__pwm.html#a889eb2a9fff5ec12a7e79b0861d51b0e',1,'M32m1_pwm']]],
+  ['setsourceclock',['setSourceClock',['../class_m32m1__pwm.html#a6c3e554b8f4b32e4202296ff0742b31d',1,'M32m1_pwm']]],
+  ['setspeed',['setSpeed',['../class_motor__dc.html#a2183bfaa000ce15a0a259a2d060f9d86',1,'Motor_dc']]],
+  ['setstate',['setState',['../class_led.html#af71e45d421891636158cbfe646a7d072',1,'Led']]],
+  ['spi',['Spi',['../class_spi.html#a27b7b236f911650839cf9465bfc4b972',1,'Spi']]],
+  ['spi_5fbegin_5ftransceive',['spi_begin_transceive',['../class_spi.html#a1ce99836e7f6cafde3c86b85f1e2d99e',1,'Spi']]],
+  ['spi_5finit_5fmaster',['spi_init_master',['../class_spi.html#ab2b6260b0e71b30b166c4bf644be1184',1,'Spi']]],
+  ['spi_5finit_5fslave',['spi_init_slave',['../class_spi.html#ac52e5fe3537eb69fd2f27924b75ca383',1,'Spi']]],
+  ['spi_5fstop_5ftransceive',['spi_stop_transceive',['../class_spi.html#ab5c46baab4314ae81f166ba19c08ff1d',1,'Spi']]],
+  ['spi_5ftranceiver',['spi_tranceiver',['../class_spi.html#a18d9c9e7ecdcee87a17a5cb24734c99d',1,'Spi']]],
+  ['start',['start',['../class_m32m1__pll.html#a47cbdb7f54b91ca890a5255d5ea69ae3',1,'M32m1_pll']]],
+  ['stop',['stop',['../class_m32m1__pll.html#ab3a9e479ea0ef5ab93cec965e30e1245',1,'M32m1_pll']]]
+];

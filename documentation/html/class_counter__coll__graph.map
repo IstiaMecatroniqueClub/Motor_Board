@@ -1,0 +1,3 @@
+<map id="Counter" name="Counter">
+<area shape="rect" id="node2" href="$class_spi.html" title="{Spi\n|&#45; _spiOut\l|+ Spi()\l+ ~Spi()\l+ spi_init_master()\l+ spi_init_slave()\l+ spi_begin_transceive()\l+ spi_stop_transceive()\l+ spi_tranceiver()\l}" alt="" coords="10,5,174,171"/>
+</map>

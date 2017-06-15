@@ -1,0 +1,13 @@
+<map id="include/pin.h" name="include/pin.h">
+<area shape="rect" id="node2" href="$main_8cpp.html" title="Main file for the MotorBoard. " alt="" coords="242,229,317,256"/>
+<area shape="rect" id="node3" href="$spi_8h.html" title="SPI class. " alt="" coords="171,80,265,107"/>
+<area shape="rect" id="node7" href="$output_8h.html" title="Output class. " alt="" coords="409,80,523,107"/>
+<area shape="rect" id="node12" href="$pin_8cpp.html" title="include/pin.cpp" alt="" coords="547,80,657,107"/>
+<area shape="rect" id="node4" href="$counter_8h.html" title="include/counter.h" alt="" coords="12,155,133,181"/>
+<area shape="rect" id="node6" href="$spi_8cpp.html" title="include/spi.cpp" alt="" coords="209,155,318,181"/>
+<area shape="rect" id="node5" href="$counter_8cpp.html" title="include/counter.cpp" alt="" coords="5,229,140,256"/>
+<area shape="rect" id="node8" href="$led_8h.html" title="Led class. " alt="" coords="716,155,811,181"/>
+<area shape="rect" id="node10" href="$motor__dc_8cpp.html" title="include/motor_dc.cpp" alt="" coords="393,155,539,181"/>
+<area shape="rect" id="node11" href="$output_8cpp.html" title="include/output.cpp" alt="" coords="563,155,691,181"/>
+<area shape="rect" id="node9" href="$led_8cpp.html" title="include/led.cpp" alt="" coords="709,229,818,256"/>
+</map>

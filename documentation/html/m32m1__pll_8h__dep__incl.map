@@ -1,0 +1,8 @@
+<map id="include/m32m1_pll.h" name="include/m32m1_pll.h">
+<area shape="rect" id="node2" href="$m32m1__pll_8cpp.html" title="include/m32m1_pll.cpp" alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node3" href="$m32m1__pwm_8h.html" title="include/m32m1_pwm.h" alt="" coords="185,80,341,107"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Main file for the MotorBoard. " alt="" coords="184,229,259,256"/>
+<area shape="rect" id="node5" href="$m32m1__pwm_8cpp.html" title="include/m32m1_pwm.cpp" alt="" coords="177,155,348,181"/>
+<area shape="rect" id="node6" href="$motor__dc_8h.html" title="Motor_dc class. " alt="" coords="373,155,505,181"/>
+<area shape="rect" id="node7" href="$motor__dc_8cpp.html" title="include/motor_dc.cpp" alt="" coords="365,229,512,256"/>
+</map>

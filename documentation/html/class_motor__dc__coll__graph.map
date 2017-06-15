@@ -1,0 +1,4 @@
+<map id="Motor_dc" name="Motor_dc">
+<area shape="rect" id="node2" href="$class_m32m1__pwm.html" title="M32m1_pwm class. " alt="" coords="5,204,216,457"/>
+<area shape="rect" id="node3" href="$class_m32m1__pll.html" title="M32m1_pll class Manage internal PLL Manage the internal PLL of the atmega32m1. This class must be a s..." alt="" coords="50,5,171,141"/>
+</map>
