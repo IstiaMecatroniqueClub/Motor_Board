@@ -66,7 +66,7 @@ public:
     //! \param speed         Speed of the motor (PWM duty cycle)
     //!                      speed is included between -PWM_COUNTER_MAX and +PWM_COUNTER_MAX
     //!                      Values outside of this range are bounded
-    void setSpeed(int speed);
+    void setSpeed(int16_t speed);
 
 
     //!
@@ -77,7 +77,7 @@ public:
 private:
 
     M32m1_pwm* _ppwm;            //!< Pointer over the PWM
-    int        _duty_cycle;      //!< The PWM duty cycle (speed of the motor)
+    uint16_t   _duty_cycle;      //!< The PWM duty cycle (speed of the motor)
     uint8_t    _rotationCW;      //!< rotation clock wise
     uint8_t    _defaultRotation; //!< To differentiate left wheels and right wheels
 };

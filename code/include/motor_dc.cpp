@@ -66,7 +66,7 @@ void Motor_dc::brakeMotor()
 
 
 // Set the speed of the motor
-void Motor_dc::setSpeed(int speed)
+void Motor_dc::setSpeed(int16_t speed)
 {
     // Set rotation direction
     _rotationCW = ((speed<0)&&_defaultRotation) || ((speed>0)&&(!_defaultRotation));
