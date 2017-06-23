@@ -218,7 +218,6 @@ ISR(CAN_INT_vect){
     
 
         if(dlc == 4){ // check if the data message has a correct dlc (4 bytes: 2 motor0, 2 motor1)
-            yellowLed.blink(500);
             if( SIDE_MOTOR == RIGHT_MOTOR){
                 memcpy((int8_t*)(&speed), &data[3], sizeof(int8_t));
                 memcpy((int8_t*)(&speed)+1, &data[2], sizeof(int8_t));
