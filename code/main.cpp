@@ -191,6 +191,13 @@ int main(void)
 ISR(TIMER1_COMPA_vect){
 
     cli();
+
+    if(watch_dog > MAX_WATCH_DOG){ 
+        motor.setSpeed(0);
+    }else{
+        watch_dog ++;
+    }
+
     sei();
 }
 
@@ -222,6 +229,7 @@ ISR(CAN_INT_vect){
             }
             printCAN(data, dlc);
             motor.setSpeed(speed);
+            watch_dog = 0;
         }
 
         CAN_lib::resetReceptionMOB(MOB_SETMOTORSPEED);
