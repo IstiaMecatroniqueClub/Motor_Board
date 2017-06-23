@@ -61,7 +61,7 @@
 
 
 //constants to change for the motors:
-#define SIDE_MOTOR              LEFT_MOTOR //!< To handle left and right moteur
+#define SIDE_MOTOR              RIGHT_MOTOR //!< To handle left and right moteur
                                             //!  choose between LEFT_MOTOR or RIGHT_MOTOR
 // #define ID_MOTOR                0x00        //!<   0x00 : LEFT_MOTOR, 0x01 : RIGHT_MOTOR
 #define ID_MOTORBOARD_DATASPEED 0x30        //!< ID of CAN Frame to set the motor speed
@@ -219,11 +219,11 @@ ISR(CAN_INT_vect){
 
         if(dlc == 4){ // check if the data message has a correct dlc (4 bytes: 2 motor0, 2 motor1)
             if( SIDE_MOTOR == RIGHT_MOTOR){
-                memcpy((int8_t*)(&speed), &data[3], sizeof(int8_t));
-                memcpy((int8_t*)(&speed)+1, &data[2], sizeof(int8_t));
+                // memcpy((int8_t*)(&speed), &data[3], sizeof(int8_t));
+                // memcpy((int8_t*)(&speed)+1, &data[2], sizeof(int8_t));
+                   memcpy(&speed, &data[2], sizeof(int16_t));
             }else{
-                memcpy((int8_t*)(&speed), &data[1], sizeof(int8_t));
-                memcpy((int8_t*)(&speed)+1, &data[0], sizeof(int8_t));
+                memcpy(&speed, &data[0], sizeof(int16_t));
                 speed = -speed;
             }
             printCAN(data, dlc);
