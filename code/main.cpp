@@ -84,7 +84,7 @@ int main(void)
 
     // initialization of the flags and other global variables
     watch_dog = 0;
-    enablePID = 0;
+    enablePID = 1;
     nb_tics_cmd = 0;
     nb_tics_target = 0;
     nbFlat = 0;
