@@ -31,7 +31,7 @@
 #define RIGHT_MOTOR             (1)         //!< The right motor value
 #define LEFT_MOTOR              (-1)        //!< The left motor value
 
-#define SIDE_MOTOR              LEFT_MOTOR  //!< To handle left and right moteur
+#define SIDE_MOTOR              RIGHT_MOTOR  //!< To handle left and right moteur
                                             //!  choose between LEFT_MOTOR or RIGHT_MOTOR
 
 #define LED_RED_PORT            PORTB       //!< The port for the red LED
@@ -42,9 +42,7 @@
 #define LED_YELLOW_PIN          2           //!< The pin for the yellow LED
 #define LED_YELLOW_POL          0           //!< The polarity of the yellow LED
 
-#define ID_MOTORBOARD_DATASPEED 0x030       //!< The polarity of the yellow LED
-#define ID_MOTORBOARD_DATACONF  0x031       //!< The polarity of the yellow LED
-#define ID_MOTORBOARD_DATAPID   0x032       //!< The polarity of the yellow LED
+#define ID_MOTORBOARD_DATASPEED 0x040       //!< The polarity of the yellow LED
 
 #define NB_STEPS                1920        //!< Number of tics for a complete wheel turn
 
@@ -54,9 +52,9 @@
                                             //!  shutting down the robot (avoid motion after
                                             //!  an emmergency stop for instance)
 
-#define DEFAULT_KP              0.05         //!< default KP for the PID 
-#define DEFAULT_KI              0.0009           //!< default KI for the PID
-#define DEFAULT_KD              0.8           //!< default KD for the PID
+#define DEFAULT_KP              0.07         //!< default KP for the PID  0.05
+#define DEFAULT_KI              0.001           //!< default KI for the PID  0.0009
+#define DEFAULT_KD              0.008           //!< default KD for the PID  0.8
 
 #define F_MOTOR_TIC2PWM(tic) (SIDE_MOTOR*35*tic) //!< To convert counter value to PWM,
                                                  //!  the values are extracted from experimental tests
@@ -213,8 +211,8 @@ ISR(CAN_INT_vect){
             if(nb_tics_new_target != nb_tics_target){
                 // if the target speed has been changed
                 nb_tics_target = nb_tics_new_target; // update the target
-                nb_tics_cmd = nb_tics_target; // update the command according to the target
-                if (enablePID) {pid.reset(); } // reset the PID
+                //nb_tics_cmd = nb_tics_target; // update the command according to the target
+                //if (enablePID) {pid.reset(); } // reset the PID
                 nbFlat = 0; // reset the nbFlat flag
             } // otherwise, nothing to change
         }
@@ -226,80 +224,7 @@ ISR(CAN_INT_vect){
         CANIE2   |= 0x02; // Enable the interruption over MOB 1 (for the next one)
         CANSIT2  &= 0xFD; // remove the MOB1 raised flag
 
-    }/*else if((CANSIT2 & 0x04 )!=0x00){ //MOB2 interruption - Set PID coefficients
-        // 1 -> set KP
-        // 2 -> set KI
-        // 3 -> set KD
-        CANPAGE = 0x20; // select MOB2
-        // get the data from the mob 2:
-        uint8_t dlc = CANCDMOB & 0x0F; // get the DLC of the CAN frame
-        if(dlc == 0x05){ // Kid | float value MSB | float value | float value | float value (LSB)
-            // get the first data byte (K identifier (P, I or D))
-            CANPAGE = 0x20; 
-            uint8_t id_K = CANMSG;
-
-            // get the float value
-            uint8_t data[4];
-            for(uint8_t i=1; i<5; i++){ // get all the data of the CAN message
-                CANPAGE = (0x20+i);
-                data[5-i-1] = (uint8_t)CANMSG; // warning : MSB and LSB
-            }
-            float value;
-            memcpy(&value, data, sizeof(float)); // put the data in a float variable
-            // update the corresponding coefficent value of the PID
-            switch(id_K){
-                case 1:
-                    pid.setKp(value);
-                    yellowLed.blink(10);
-                    break;
-                case 2:
-                    pid.setKi(value);
-                    yellowLed.blink(10);
-                    break;
-                case 3:
-                    pid.setKd(value);
-                    yellowLed.blink(10);
-                    break;
-            }
-            // reset the PID
-            pid.reset();
-        }
-        // else: the data is not correct
-
-        // reset the MOB2 configuration for next CAN message
-        CANPAGE   = 0x20; // Selection of MOB 2
-        CANSTMOB  = 0x00; // Reset the status of the MOB2
-        CANCDMOB  = 0x80; // Config as reception MOB2
-        CANIE2   |= 0x04; // Enable the interuption over MOB 2 (for the next one)
-        CANSIT2  &= 0xFB; // remove the MOB2 raised flag
-
-    }else if((CANSIT2 & 0x08 )!=0x00){ //MOB3 interruption : CONFIGURATION WORD
-        CANPAGE = 0x30; // select the MOB 3
-        //get the data from the mob 3:
-        uint8_t dlc = CANCDMOB & 0x0F; // get the dlc of the CAN frame
-        if(dlc == 0x01){ // configuration word, 1 byte
-            //get the first data byte (configuration byte)
-            CANPAGE = 0x30;
-            uint8_t configuration = CANMSG;
-            // enable PID is the LSB of the configuration word
-            enablePID = configuration & 0x01;
-
-            // blink the led to show the PID status
-            if(enablePID==0x01) yellowLed.blink(50);
-            else redLed.blink(50);
-
-            pid.reset(); // reset the PID
-        }
-        // else: the data is not correct
-
-        // reset the MOB3 configuration for next CAN message
-		initCANMOBasReceiver(3, ID_MOTORBOARD_DATACONF, 0);
-        //CANPAGE   = 0x30; // select MOB3
-        //CANSTMOB  = 0x00; // Reset the status of the MOB3
-        //CANCDMOB  = 0x80; // Config as reception MOB3
-        //CANIE2   |= 0x08; // Enable the interruption over MOB 3 (for the next one)
-        //CANSIT2  &= 0xF7; // remove the MOB3 raised flag
-    }*/
+    }
 
     sei(); // enable the interruptions
 }
